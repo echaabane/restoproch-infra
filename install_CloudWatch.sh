@@ -2,7 +2,7 @@
 
 # Variables
 FRONT_END_IPS=("front-end-vm-ip-1" "front-end-vm-ip-2")
-BACK_END_IPS=("back-end-vm-ip-1" "back-end-vm-ip-2")
+BACK_END_IPS=("3.80.139.79" "3.80.98.252")
 KEY_PATH="~/.ssh/MyKeyPair.pem"
 
 # Command to install CloudWatch agent
