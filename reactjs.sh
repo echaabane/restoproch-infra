@@ -2,7 +2,7 @@
 
 # Variables
 KEY_PATH="~/.ssh/MyKeyPair.pem"
-FRONT_END_IPS=("front-end-vm-ip-1" "front-end-vm-ip-2")
+FRONT_END_IPS=("54.87.53.90" "52.200.135.156")
 
 # Build the React application
 npm run build
