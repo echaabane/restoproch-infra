@@ -19,14 +19,14 @@ BACKEND_INSTANCES=($(aws ec2 run-instances --image-id $AMI_ID --count 2 --instan
 FRONTEND_INSTANCES=($(aws ec2 run-instances --image-id $AMI_ID --count 2 --instance-type $INSTANCE_TYPE --key-name $KEY_NAME --security-groups $SECURITY_GROUP_FRONT --query 'Instances[*].InstanceId' --output text --region $REGION))
 
 # Create Load Balancer for backend
-BACK_LB_ARN=$(aws elbv2 create-load-balancer --name back-lb --subnets subnet-12345678 subnet-87654321 --security-groups $SECURITY_GROUP_BACK --query 'LoadBalancers[0].LoadBalancerArn' --output text --region $REGION)
+BACK_LB_ARN=$(aws elbv2 create-load-balancer --name back-lb --subnet subnet-095e5449ff752677b subnet-87654321 --security-groups $SECURITY_GROUP_BACK --query 'LoadBalancers[0].LoadBalancerArn' --output text --region $REGION)
 
 # Create Load Balancer for frontend
-FRONT_LB_ARN=$(aws elbv2 create-load-balancer --name front-lb --subnets subnet-12345678 subnet-87654321 --security-groups $SECURITY_GROUP_FRONT --query 'LoadBalancers[0].LoadBalancerArn' --output text --region $REGION)
+FRONT_LB_ARN=$(aws elbv2 create-load-balancer --name front-lb --subnet subnet-095e5449ff752677b  --security-groups $SECURITY_GROUP_FRONT --query 'LoadBalancers[0].LoadBalancerArn' --output text --region $REGION)
 
 # Create target groups for backend and frontend
-BACK_TG_ARN=$(aws elbv2 create-target-group --name back-tg --protocol HTTP --port 8080 --vpc-id vpc-12345678 --query 'TargetGroups[0].TargetGroupArn' --output text --region $REGION)
-FRONT_TG_ARN=$(aws elbv2 create-target-group --name front-tg --protocol HTTP --port 80 --vpc-id vpc-12345678 --query 'TargetGroups[0].TargetGroupArn' --output text --region $REGION)
+BACK_TG_ARN=$(aws elbv2 create-target-group --name back-tg --protocol HTTP --port 8080 --vpc-id vpc-07ae862b8b33c06f7 --query 'TargetGroups[0].TargetGroupArn' --output text --region $REGION)
+FRONT_TG_ARN=$(aws elbv2 create-target-group --name front-tg --protocol HTTP --port 80 --vpc-id vpc-07ae862b8b33c06f7 --query 'TargetGroups[0].TargetGroupArn' --output text --region $REGION)
 
 # Register instances with target groups
 for instance in "${BACKEND_INSTANCES[@]}"; do
