@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-FRONT_END_IPS=("front-end-vm-ip-1" "front-end-vm-ip-2")
+FRONT_END_IPS=("54.87.53.90" "52.200.135.156")
 BACK_END_IPS=("3.80.139.79" "3.80.98.252")
 KEY_PATH="~/.ssh/MyKeyPair.pem"
 
