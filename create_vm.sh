@@ -4,7 +4,7 @@
 KEY_NAME="MyKeyPair"
 SECURITY_GROUP_FRONT="sg-front"
 SECURITY_GROUP_BACK="sg-back"
-AMI_ID="ami-0abcdef1234567890" # Replace with a valid AMI ID
+AMI_ID="ami-0abcdef1234567890"
 INSTANCE_TYPE="t2.micro"
 REGION="us-east-1"
 
