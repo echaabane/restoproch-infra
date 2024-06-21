@@ -4,7 +4,7 @@
 KEY_NAME="MyKeyPair"
 SECURITY_GROUP_FRONT="sg-front"
 SECURITY_GROUP_BACK="sg-back"
-AMI_ID="ami-0abcdef1234567890"
+AMI_ID="ami-08a0d1e16fc3f61ea"
 INSTANCE_TYPE="t2.micro"
 REGION="us-east-1"
 
